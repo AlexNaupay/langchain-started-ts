@@ -1,7 +1,7 @@
 import { PDFLoader } from '@langchain/community/document_loaders/fs/pdf'
 
-async function loadPdf() {
-    const filePath = 'src/files/public_key_cryptography.pdf'
+export async function loadPdf(pdfPath?: string) {
+    const filePath = pdfPath || 'src/files/public_key_cryptography.pdf'
 
     const pdfLoader = new PDFLoader(filePath)
 
@@ -12,6 +12,7 @@ async function loadPdf() {
     console.log('Docs Metadata: ', docs[0].metadata)
     console.log('--------------------------------------')
     console.log('Doc pageContent: ', docs[0].pageContent)
+    return docs
 }
 
 loadPdf()
