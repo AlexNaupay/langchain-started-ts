@@ -10,5 +10,8 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.5.3"
   },
-  "private": true
+  "private": true,
+  "dependencies": {
+    "@langchain/community": "^0.3.45"
+  }
 }

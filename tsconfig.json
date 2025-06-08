@@ -1,12 +1,14 @@
 {
   "compilerOptions": {
-    "target": "es2021",
-    "module": "commonjs",
+    "target": "ES2023",
+    "module": "NodeNext",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true,
-    "outDir": "dist"
+    "outDir": "dist",
+    "moduleResolution": "nodenext"
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["dist"]
 }
