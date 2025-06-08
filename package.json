@@ -12,6 +12,7 @@
   },
   "private": true,
   "dependencies": {
-    "@langchain/community": "^0.3.45"
+    "@langchain/community": "^0.3.45",
+    "pdf-parse": "^1.1.1"
   }
 }
