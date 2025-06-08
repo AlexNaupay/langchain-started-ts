@@ -13,6 +13,9 @@
   "private": true,
   "dependencies": {
     "@langchain/community": "^0.3.45",
+    "@langchain/core": "^0.3.57",
+    "@langchain/openai": "^0.5.12",
+    "dotenv": "^16.5.0",
     "pdf-parse": "^1.1.1"
   }
 }

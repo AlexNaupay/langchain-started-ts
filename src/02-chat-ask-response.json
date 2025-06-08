@@ -1,0 +1,45 @@
+{
+  "id": "chatcmpl-BgHqzODf0bVFYSlmpabbqxZ8FsdQ7",
+  "content": "La Conferencia 14 se centra en la criptografía de clave pública, contrastándola con la criptografía simétrica discutida en la sesión anterior. La criptografía simétrica requiere un intercambio de claves secretas entre las partes, lo que plantea problemas de distribución de claves. En cambio, la criptografía de clave pública utiliza un par de claves: una pública, que se puede compartir libremente para cifrar mensajes, y una privada, que se mantiene en secreto para descifrar esos mensajes.\n\nSe presentan las propiedades de esta criptografía asimétrica, que permite a cualquier persona enviar un mensaje cifrado a un usuario a través de su clave pública, garantizando que solo el propietario de la clave privada pueda descifrarlo. También se discute la importancia de las propiedades de corrección en el cifrado y descifrado.\n\nFinalmente, se menciona que muchos algoritmos de criptografía de clave pública se basan en la aritmética modular, y se ofrece un repaso de cómo funcionan las operaciones fundamentales en este contexto, incluyendo la suma, resta, multiplicación y exponenciación bajo un módulo dado.",
+  "additional_kwargs": {},
+  "response_metadata": {
+    "tokenUsage": {
+      "promptTokens": 624,
+      "completionTokens": 228,
+      "totalTokens": 852
+    },
+    "finish_reason": "stop",
+    "model_name": "gpt-4o-mini-2024-07-18",
+    "usage": {
+      "prompt_tokens": 624,
+      "completion_tokens": 228,
+      "total_tokens": 852,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    "system_fingerprint": "fp_62a23a81ef"
+  },
+  "tool_calls": [],
+  "invalid_tool_calls": [],
+  "usage_metadata": {
+    "output_tokens": 228,
+    "input_tokens": 624,
+    "total_tokens": 852,
+    "input_token_details": {
+      "audio": 0,
+      "cache_read": 0
+    },
+    "output_token_details": {
+      "audio": 0,
+      "reasoning": 0
+    }
+  }
+}
