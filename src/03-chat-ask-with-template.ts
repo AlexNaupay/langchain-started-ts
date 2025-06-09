@@ -26,6 +26,7 @@ async function askWithTemplate() {
     console.log('Prompt template value: --------------------------------------')
     console.info(promptValue.toChatMessages())
 
+    // Chat and invoke
     const chat = new ChatOpenAI({ model: 'gpt-4o-mini'})
      let aiResponse = await chat.invoke(promptValue);
      console.log('AI Response = AIMessage = assistant: --------------------------------------')

@@ -19,21 +19,21 @@ async function askWithTemplate() {
         // https://js.langchain.com/docs/concepts/messages/#role
         // OpenAI Format: user, developer=system?, assistant
         ['system', systemTemplate],
-        ['user', '{userInput}'],
+        ['human', '{userInput}'],  // user = human
     ])
 
-    // Like compiling template
-    const promptValue = await promptTemplate.invoke({
+    // Chat
+    const chat = new ChatBedrockConverse({ model: 'amazon.nova-micro-v1:0', region: process.env.AWS_REGION})
+
+    // Chain
+    // https://js.langchain.com/docs/how_to/sequence/
+    const chain = promptTemplate.pipe(chat)
+
+    // Invoke chain
+    let aiResponse = await chain.invoke({
         languageDest: 'Spanish',
         userInput: docs[0].pageContent.substring(0, 500)
-    })
-
-    console.log('Prompt template value: --------------------------------------')
-    console.info(promptValue.toChatMessages())
-
-    // Chat and invoke
-    const chat = new ChatBedrockConverse({ model: 'amazon.nova-micro-v1:0', region: process.env.AWS_REGION})
-    let aiResponse = await chat.invoke(promptValue);
+    });
 
     console.log('AI Response = AIMessage = assistant: --------------------------------------')
     console.info(aiResponse)
