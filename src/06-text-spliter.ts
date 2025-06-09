@@ -16,6 +16,9 @@ splitter.splitText(text).then(console.log).catch(console.error)
 
 // create Documents from texts
 splitter.createDocuments([text]).then(console.info).catch(console.error)
+/*const docOutput = await splitter.splitDocuments([
+    new Document({ pageContent: text }),
+]);*/
 
 const splitter2 = new RecursiveCharacterTextSplitter({
     chunkSize: 1200,
