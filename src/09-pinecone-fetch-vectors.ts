@@ -22,7 +22,9 @@ async function pineconeRead() {
     console.info(results)
 
     const ids = results.vectors?.map(vector => vector.id || '' )
-    index.fetch(ids || []).then(console.info)
+    const fetchedResults = await index.fetch(ids || []);
+    console.info(fetchedResults)
+    console.info(fetchedResults.records['044c3dcf-0d27-406d-b9c6-e56859bd1d6d'].metadata)
 
     // Get next pagination
     // index.listPaginated({ paginationToken: results.pagination?.next}).then(console.info);
