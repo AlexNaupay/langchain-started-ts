@@ -7,11 +7,13 @@
     "build": "tsc"
   },
   "devDependencies": {
+    "@types/node": "^24.0.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.3"
   },
   "private": true,
   "dependencies": {
+    "@aws-sdk/client-bedrock-runtime": "^3.828.0",
     "@langchain/aws": "^0.1.10",
     "@langchain/community": "^0.3.45",
     "@langchain/core": "^0.3.57",
@@ -20,6 +22,7 @@
     "@langchain/pinecone": "^0.2.0",
     "@langchain/textsplitters": "^0.1.0",
     "@pinecone-database/pinecone": "^5.1.2",
+    "axios": "^1.9.0",
     "dotenv": "^16.5.0",
     "langchain": "^0.3.27",
     "mongodb": "^6.17.0",
