@@ -87,7 +87,16 @@ async function askWithTemplate() {
     // Chat
     const chat = new ChatBedrockConverse({
         model: 'amazon.nova-lite-v1:0',
-        region: process.env.AWS_REGION
+        region: process.env.AWS_REGION,
+        additionalModelRequestFields: {
+            messages: [{
+                role: '',
+                content: [{
+                    type: "image_url",
+                    image_url: { url: `data:image/jpeg;base64,${base64Image}` },
+                }]
+            }]
+        }
     })
         .withStructuredOutput(outputSchema, { name: 'boletin', includeRaw:true })
 
