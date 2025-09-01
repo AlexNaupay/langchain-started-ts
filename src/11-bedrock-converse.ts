@@ -24,32 +24,51 @@ configDotenv();
 
 const prompt = `
 ## Contexto:
-Eres un asistente que extrae datos del reportes vulcanológicos escritos en español, en formato json.
+Eres un asistente que extrae datos de reportes vulcanológicos escritos en español, en formato json.
 (es muy importante que el resultado lo des en json, Responde SOLO con el JSON, sin texto adicional.)
+<mapeo-de-volcan-id-y-nombre>
+ubinas => Ubinas
+sabancaya => Sabancaya
+sara-sara => Sara Sara
+cerro-auquihuato => Cerro Auquihuato
+andahua => Andahua
+coropuna => Coropuna
+huambo => Huambo
+chachani => Chachani
+tutupaca => Tutupaca
+huaynaputina => Huaynaputina
+ticsani => Ticsani
+casiri => Casiri
+cerros-purupuruni => Cerros Purupuruni
+quimsachata => Quimsachata
+yucamane => Yucamane
+misti => Misti
+</mapeo-de-volcan-id-y-nombre>
 
 ## Tarea:
-Extrae datos del documento, que está escrito en español, con las siguientes llaves:
-- volcano_name, descripción: Nombre de volcán
-- analysis_period, descripción: Periodo de análisis, fechas de la forma YYYY-MM-DD separado por una ','
+Extrae datos del documento, que está escrito en español, con las siguientes llaves para json:
+- volcano_identifier, descripción: Id del volcán, usa <mapeo-de-volcan-id-y-nombre> para obtener el id
+- report, descripción: Identificador del reporte, Ejemplo: IGP/CENVUL-MIS/BV 2025-0006
+- analysis_period, descripción: Periodo de análisis, fechas de la forma YYYY-MM-DD separado por una ','. Ejemplo: Si encuentras: "1-15 de junio de 2025" debes entregarlo como: 2025-06-01,2025-06-15
 - issued_at, descripción: Fecha de emisión en la forma YYYY-MM-DD
 - alert_level, descripción: Nivel de alerta en colores: verde, amarillo, naranja o rojo
 - summary, descripción: Resumen
-- analysis, descripción: el texto en la sección análisis
-- perspectives, descripción: el texto en la sección perspectivas
-- recommendations, descripción: recomendaciones
-
+- analysis, descripción: un array con cada item de la lista de la sección análisis
+- perspectives, descripción: un array con cada item de la lista de la sección perspectivas
+- recommendations, descripción: un array con cada item de la lista de la sección recomendaciones
 Respeta las tildes y letras del español en la respuesta.
 
 ##Esquema de respuesta:
 {
-  "volcano_name": "value",
+  "volcano_identifier": "value",
+  "report": "value",
   "analysis_period": "value",
   "issued_at": "value",
   "alert_level": "value",
   "summary": "value",
-  "analysis": "value",
-  "perspectives": "value",
-  "recommendations": "value"
+  "analysis": ["item 1", "item 2", ...],
+  "perspectives": ["item 1", "item 2", ...],
+  "recommendations": ["item 1", "item 2", ...]
 }
 `;
 
